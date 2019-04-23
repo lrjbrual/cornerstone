@@ -18,10 +18,8 @@ module Admin
     end
 
     def index
+      @categorytitle = "Manage Categories"
       @categories = Category.all
-    end
-
-    def show
     end
 
     private

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :email, only: [:index]
 
+  namespace :admin do 
+    resources :categories
+  end 
   namespace :admin do
     get 'categories/index'
     get 'categories/show'
