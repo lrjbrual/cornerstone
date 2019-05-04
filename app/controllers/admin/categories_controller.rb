@@ -31,7 +31,7 @@ module Admin
     def destroy
       @category = Category.find(params[:id])
       @category.destroy
-      redirect_to admin_categories_path, notice: "Delete Success"
+      redirect_to admin_categories_path, alert: "Delete Success"
     end
 
     def index
