@@ -6,15 +6,32 @@ module Admin
 
     def create
       @category = Category.new(category_params)
-      if @categories.save
+      if @category.save
         flash[:notice] = 'Category Created'
-        redirect_to admin_category_path
+        redirect_to admin_categories_path
       else
-        render 'new'
+        render :new
+      end
+    end
+
+    def edit 
+      @category = Category.find(params[:id])
+    end
+
+    def update
+      @category = Category.find(params[:id])
+      if @category.update(category_params)
+        flash[:notice] = 'Category Updated'
+        redirect_to admin_categories_path
+      else 
+        render :edit 
       end
     end
 
     def destroy
+      @category = Category.find(params[:id])
+      @category.destroy
+      redirect_to admin_categories_path, notice: "Delete Success"
     end
 
     def index

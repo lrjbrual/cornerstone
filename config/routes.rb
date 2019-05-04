@@ -7,16 +7,11 @@ Rails.application.routes.draw do
   namespace :admin do 
     resources :categories
   end 
-  namespace :admin do
-    get 'categories/index'
-    get 'categories/show'
-    get 'categories/new'
-    get 'categories/create'
-    get 'categories/destroy'
-  end
-  get 'email/index'
 
   namespace :admin do
-    resources :categories 
+    get 'categories/destroy'
   end
+
+  get 'email/index'
+
 end

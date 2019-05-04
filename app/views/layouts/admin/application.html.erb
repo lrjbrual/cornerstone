@@ -13,7 +13,9 @@
     <div class="wrapper">
       <%= render "admin/shared/sidebar"%>
       <div class="main-panel">
-        <%= yield %>
+        <div class="content">
+          <%= yield %>
+        </div>
       </div>
     </div>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

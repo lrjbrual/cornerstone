@@ -1,0 +1,37 @@
+<div class="md-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title"><b><%= action_name.capitalize %> Category</b></h5>
+      </div>
+      <%= form_for [:admin, @category] do |cat| %>
+      <% if @category.errors.any? %>
+        <% @category.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+            <button type="button" aria-hidden="true" class="close">×</button>
+            <span><b> Danger - </b> <%= msg %></span>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 pr-1">
+              <div class="form-group">
+                <%= cat.label :name %>
+                <%= cat.text_field :name, class: "form-control", placeholder: "Category New Name"%>
+              </div>
+                <%= link_to "Cancel", admin_categories_path, class: "btn btn-secondary btn-wd" %>
+                <%= cat.submit "Submit", class: "btn btn-primary btn-wd"%>
+            </div>
+          </div>
+          <%# <div class="row">
+            <div class="update ml-auto mr-auto">
+              <div class="form-group">
+              </div>
+            </div>
+          </div> %>
+        </form>
+      </div>
+        <% end %>
+    </div>
+  </div>
