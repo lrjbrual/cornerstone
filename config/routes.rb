@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :email, only: [:index]
 
   namespace :admin do 
-    resources :categories, :users
+    resources :categories, :sermons, :users
   end
 
   get 'email/index'

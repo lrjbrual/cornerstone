@@ -1,0 +1,51 @@
+<div class="md-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title"><b><%= action_name.capitalize %> Sermon / Preaching</b></h5>
+      </div>
+      <%= form_for [:admin, @sermon] do |sermon| %>
+      <% if @sermon.errors.any? %>
+        <% @sermon.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+            <button type="button" aria-hidden="true" class="close">×</button>
+            <span><b> Danger - </b> <%= msg %></span>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 pr-1">
+              <div class="form-group">
+                <%= sermon.label :title %>
+                <%= sermon.text_field :title, class: "form-control", placeholder: "Category New Name"%>
+              </div>
+              <div class="form-group">
+                <%= sermon.label :author %>
+                <%= sermon.select :user_id, User.all.collect { |x| [x.name, x.id]}, 
+                  {include_blank: 'Select your author' }, class: "form-control"%>
+              </div>
+              <div class="form-group">
+                <%= sermon.label :category %>
+                <%= sermon.select :category_id, Category.all.collect { |x| [x.name, x.id]}, 
+                  {include_blank: 'Select your Category' }, class: "form-control"%>
+              </div>
+              <div class="form-group">
+                <%= sermon.label :body %>
+                <%= sermon.text_area :body, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto col-md-12 col-sm-12 pr-1">
+              <div class="form-group">
+                <%= link_to "Cancel", admin_sermons_path, class: "btn btn-secondary btn-wd" %>
+                <%= sermon.submit "Submit", class: "btn btn-primary btn-wd"%>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+        <% end %>
+    </div>
+  </div>

@@ -23,11 +23,11 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class=" ">
-            <a href="./icons.html">
+          <li class="<%= 'active' if params[:controller] == 'admin/categories' %>">
+            <%= link_to admin_sermons_path, class: "nav-link" do %>
               <i class="fas fa-user-tie"></i>
               <p>Sermons</p>
-            </a>
+            <% end %>
           </li>
           <li class="<%= 'active' if params[:controller] == 'admin/categories' %>">
             <%= link_to admin_categories_path, class: "nav-link" do %>
@@ -53,6 +53,7 @@
               <i class="fas fa-users"></i>
               <p>User</p>
             <% end %>
+          </li>
         </ul>
       </div>
     </div>

@@ -36,6 +36,7 @@ module Admin
     end
 
     def index
+      @usertitle = 'Manage User'
       @users = User.all
     end
 
