@@ -43,7 +43,7 @@ module Admin
     private 
 
     def sermon_params
-      params.require(:sermon).permit(:title, :body, :user_id, :category_id,)
+      params.require(:sermon).permit(:title, :body, :user_id, :category_id)
     end
   end
 end

@@ -1,0 +1,50 @@
+.coloured-cards .card {
+  margin-top: 30px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+  background-color: #FFFFFF;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-big-shadow {
+  max-width: 320px;
+  position: relative;
+}
+
+.card-big-shadow:before {
+  background-image: url(http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  bottom: -12%;
+  content: "";
+  display: block;
+  left: -12%;
+  position: absolute;
+  right: 0;
+  top: -10px;
+  z-index: 0;
+}
+
+.card[data-radius="none"] {
+  border-radius: 0px;
+}
+
+.card .content {
+  padding: 20px 20px 10px 20px;
+}
+
+.card .category {
+  color: #ccc5b9;
+}
+
+.card .category, .card .label {
+  font-size: 14px;
+  margin-bottom: 0px;
+}

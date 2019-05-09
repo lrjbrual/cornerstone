@@ -1,0 +1,50 @@
+<div class="container marginTop60">
+  <div class="row">
+    <div class="col-md-12 ml-auto mr-auto">
+      <div class="text-center">
+        <a href="javascrip: void(0);">
+          <h3 class="title"><%= @sermon.title%></h3>
+        </a>
+        <h5 class="category">Posted:  <%= time_ago_in_words(@sermon.created_at) %> Ago</h5>
+      </div>
+    </div>
+    <div class="col-md-12 ml-auto mr-auto">
+      <%# for photo
+        <a href="javascrip: void(0);">
+        <div class="card" data-radius="none" style="background-image: url('../assets/img/sections/daniel-olahs.jpg');"></div>
+        <p class="image-thumb text-center">Photo by Cam Adams</p>
+      </a> %>
+      <div class="article-content">
+        <%= sanitize @sermon.body%>
+      </div>
+      <br>
+      <%# <div class="article-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Tags:</h5>
+              <span class="label label-default">Motivational</span>
+              <span class="label label-default">Newsletter</span>
+              <span class="badge badge-warning">Trending</span>
+            </div>
+            <div class="col-md-4 ml-auto">
+              <div class="sharing">
+                <h5>Spread the word</h5>
+                <button class="btn btn-just-icon btn-twitter">
+                  <i class="fa fa-twitter"></i>
+                </button>
+                <button class="btn btn-just-icon btn-facebook">
+                  <i class="fa fa-facebook"> </i>
+                </button>
+                <button class="btn btn-just-icon btn-google">
+                  <i class="fa fa-google"> </i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> %>
+      <hr>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-
-  get 'bibles/index'
   root to: 'home#index'
   resources :faith, only: [:index, :scriptures]
-  resources :about, :bibles, only: [:index]
+  resources :about, :bibles, :sermons, only: [:index, :show]
   resources :email, only: [:index]
 
   namespace :admin do 
