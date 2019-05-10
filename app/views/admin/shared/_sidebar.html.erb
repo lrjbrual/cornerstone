@@ -47,6 +47,12 @@
               <p>Visit Us</p>
             </a>
           </li>
+          <li class="<%= 'active' if params[:controller] == 'admin/abouts' %>">
+            <%= link_to admin_abouts_path, class: "nav-link" do %>
+                <i class="fas fa-book"></i>
+                <p>About Us</p>
+            <% end %>
+          </li>
           <li>
           <li class="<%= 'active' if params[:controller] == 'admin/users' %>">
             <%= link_to admin_users_path, class: "nav-link" do %>

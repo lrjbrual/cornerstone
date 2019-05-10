@@ -1,0 +1,35 @@
+<div class="md-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title"><b><%= action_name.capitalize %> About</b></h5>
+      </div>
+      <%= form_for [:admin, @about] do |about| %>
+      <% if @about.errors.any? %>
+        <% @about.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+            <button type="button" aria-hidden="true" class="close">×</button>
+            <span><b> Danger - </b> <%= msg %></span>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 pr-1">
+              <div class="form-group">
+                <%= about.label :title %>
+                <%= about.text_field :title, class: "form-control", placeholder: "Title"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :body %>
+                <%= about.text_area :body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+                <%= link_to "Cancel", admin_abouts_path, class: "btn btn-secondary btn-wd" %>
+                <%= about.submit "Submit", class: "btn btn-primary btn-wd"%>
+            </div>
+          </div>
+        </form>
+      </div>
+        <% end %>
+    </div>
+  </div>

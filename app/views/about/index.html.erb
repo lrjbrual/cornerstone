@@ -1,13 +1,15 @@
 <div class="container marginTop">
   <div class="tim-row center">
-      <h1><%= @titleAbout %></h1>
+  <% @abouts.each do |a| %>
+      <h1><%= a.title.humanize %></h1>
   </div>
   <div class="tim-row">
     <legend></legend>
       <p>
-        <%= @about %>
+        <%= sanitize a.body %>
       </p>
   </div>
+  <% end %>
   <br />
   <div class="tim-row">
     <%= render 'email/contact'%>

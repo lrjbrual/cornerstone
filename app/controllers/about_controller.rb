@@ -1,12 +1,14 @@
 class AboutController < ApplicationController
 
   def index 
-    @titleAbout = "About Us"
-    @about = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    @addressTitle = "Our Church Address"
-    @address = "Startbaan 8 Amstelveen"
-    @countryCode = "Netherlands"
-    @phoneNumber = "+31..."
-    @email = "eKreh73@gmail.com"
+    # @titleAbout = "About Us"
+    # @about = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    # @addressTitle = "Our Church Address"
+    # @address = "Startbaan 8 Amstelveen"
+    # @countryCode = "Netherlands"
+    # @phoneNumber = "+31..."
+    # @email = "eKreh73@gmail.com"
+    @abouts = About.all
+    # @about = About.find(params[:id])
   end
 end

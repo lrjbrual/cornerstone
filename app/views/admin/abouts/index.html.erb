@@ -1,0 +1,63 @@
+        <div class="row">
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-header">
+              <div class="row">
+                <div class="col-md-6">
+                <h4 class="card-title"><%= @abouttitle %></h4>
+                </div>
+                <div class="col-md-6 text-right">
+                  <%= link_to 'Create New', new_admin_about_path, class: "btn btn-primary btn-sm" %>
+                </div>
+              <%= render 'shared/alert' %>
+              </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                  <% if @abouts.exists? %>
+                    <thead class=" text-primary">
+                      <tr><th>
+                        Name
+                      </th>
+                      <th>
+                        Date Created
+                      </th>
+                      <th>
+                        Action
+                      </th>
+                    </tr></thead>
+                    <tbody>
+                    <% @abouts.each do |about| %> 
+                      <tr>
+                        <td>
+                          <%= about.title %>
+                        </td>
+                        <td>
+                          <%= about.body.first(50).. %>
+                        </td>
+                        <td>
+                          <%= time_ago_in_words(about.created_at) %> ago
+                        </td>
+                        <td class="text-left">
+                          <%= link_to edit_admin_about_path(about) do %>
+                          <i class="far fa-lg fa-edit text-primay"></i>
+                          <% end %>
+                          &nbsp;
+                          <%= link_to admin_about_path(about), method: :destroy, data: {confirm: 'Are you sure?'} do %>
+                            <i class="far fa-trash-alt fa-lg text-warning"></i>
+                          <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
+                    <% else %>
+                      <p>There is no about</p>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
