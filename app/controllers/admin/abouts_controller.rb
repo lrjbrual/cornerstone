@@ -27,18 +27,28 @@ module Admin
 
     def index
       @abouttitle = 'Manage About Page'
-      @abouts = About.all
+      @about = About.last
+      if @about.blank?
+        @about = ''
+      else
+        @about = About.last
+      end
     end
 
     def show
-      @about = About.where('id = ?', id).pluck(:about_id).first
-      # @truck_no = Truck.where("id = ?", id).pluck(:truck_no).first
+      # @about = About.where(about_title: about.title).present?
+      # @about = About.where('id = ?', id).pluck(:about_id).first
+      # if @about = About.where(about_id: about.id).present?
+      #
+      # else
+      #   render :new
+      # end
     end
 
     private
 
     def about_params
-      params.permit(:about).require(:title, :body)
+      params.require(:about).permit(:title, :body)
     end
   end
 end
