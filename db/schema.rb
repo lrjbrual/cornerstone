@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 2019_05_09_203922) do
   create_table "abouts", force: :cascade do |t|
     t.string "title"
     t.string "body"
+    t.string "scriptures_title"
+    t.string "scriptures_body"
+    t.string "godhead_title"
+    t.string "godhead_body"
+    t.string "diety_title"
+    t.string "diety_body"
+    t.string "salvation_title"
+    t.string "salvation_body"
+    t.string "church_title"
+    t.string "church_body"
+    t.string "last_title"
+    t.string "last_body"
+    t.string "page_title"
+    t.string "page_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -17,15 +17,71 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 pr-1">
               <div class="form-group">
+                <%= about.label :page_title %>
+                <%= about.text_field :page_title, class: "form-control", placeholder: "Title"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :page_notes %>
+                <%= about.text_area :page_notes, class: "form-control", placeholder: "Title"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :scriptures_title %>
+                <%= about.text_field :scriptures_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :scriptures_body %>
+                <%= about.text_area :scriptures_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :godhead_title %>
+                <%= about.text_field :godhead_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :godhead_body %>
+                <%= about.text_area :godhead_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :diety_title %>
+                <%= about.text_field :diety_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :diety_body %>
+                <%= about.text_area :diety_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :salvation_title %>
+                <%= about.text_field :salvation_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :salvation_body %>
+                <%= about.text_area :salvation_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :church_title %>
+                <%= about.text_field :church_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :church_body %>
+                <%= about.text_area :church_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :last_title %>
+                <%= about.text_field :last_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= about.label :last_body %>
+                <%= about.text_area :last_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
                 <%= about.label :title %>
-                <%= about.text_field :title, class: "form-control", placeholder: "Title"%>
+                <%= about.text_field :title, class: "form-control", placeholder: "Body texts"%>
               </div>
               <div class="form-group">
                 <%= about.label :body %>
                 <%= about.text_area :body, class: "form-control", placeholder: "Body texts"%>
               </div>
                 <%= link_to "Cancel", admin_abouts_path, class: "btn btn-secondary btn-wd" %>
-                <%= about.submit "Submit", class: "btn btn-primary btn-wd"%>
+                <%= about.submit frm_action, class: "btn btn-primary btn-wd"%>
             </div>
           </div>
         </form>

@@ -1,5 +1,6 @@
 module Admin
   class AboutsController < Admin::BaseController
+    before_action only: [:show, :edit, :update, :destroy]
 
     def new
       @about = About.new
@@ -20,6 +21,13 @@ module Admin
     end
 
     def update
+      @about = About.find(params[:id])
+      if @about.update(about_params)
+        flash[:notice] = 'About Page has been updated'
+        redirect_to admin_abouts_path
+      else
+        render :edit
+      end
     end
 
     def destroy
@@ -31,11 +39,12 @@ module Admin
       if @about.blank?
         @about = ''
       else
-        @about = About.last
+        redirect_to admin_about_path(@about)
       end
     end
 
     def show
+      @about = About.last
       # @about = About.where(about_title: about.title).present?
       # @about = About.where('id = ?', id).pluck(:about_id).first
       # if @about = About.where(about_id: about.id).present?
@@ -47,8 +56,20 @@ module Admin
 
     private
 
+    def set_about
+      @about = About.find(params[:id])
+    end
+
     def about_params
-      params.require(:about).permit(:title, :body)
+      params.require(:about).permit(
+        :title, :body, :scriptures_title, :scriptures_body,
+        :godhead_title, :godhead_body, 
+        :diety_title, :diety_body,
+        :salvation_title, :salvation_body,
+        :church_title, :church_body,
+        :last_title, :last_body,
+        :page_title, :page_notes
+        )
     end
   end
 end
