@@ -15,5 +15,5 @@
 //=# require plugins/paper-dashboard.js
 //=# require plugins/paper-dashboard.min
 //=# require jquery-1.10.2
-//= require jquery-ui-1.10.4.custom.min
+//=# require jquery-ui-1.10.4.custom.min
 //= require turbolinks

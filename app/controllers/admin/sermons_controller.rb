@@ -1,5 +1,6 @@
 module Admin
   class SermonsController < Admin::BaseController
+    before_action :set_sermon, only: [:show, :edit, :update, :destroy]
 
     def new
       @sermon = Sermon.new
@@ -30,20 +31,24 @@ module Admin
     end
 
     def destroy
-      @sermon = Sermon.find(params[:id]).destroy
       @sermon.destroy
-        redirect_to admin_sermons_path, alert: 'Sermon Deleted'
+        redirect_to admin_sermons_path, notice: 'Sermon Deleted'
     end
 
     def index
       @sermonstitle = 'Manage Sermons'
-      @sermons = Sermon.all
+      @sermons = Sermon.all.order('created_at DESC')
     end
 
     private 
 
+    def set_sermon
+      @sermon = Sermon.find(params[:id])
+    end
+
     def sermon_params
       params.require(:sermon).permit(:title, :body, :user_id, :category_id)
     end
+    
   end
 end
