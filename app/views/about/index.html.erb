@@ -1,16 +1,33 @@
-<div class="container marginTop">
+<div class="container marginTop60">
   <div class="tim-row center">
   <% @abouts.each do |a| %>
-      <h1><%= a.title.humanize %></h1>
+      <p><%= sanitize a.about_us %></p>
   </div>
-  <div class="tim-row">
-    <legend></legend>
+  <legend></legend>
+  <div class="tim-row center marginTop">
+      <i class="far fa-calendar-alt fa-3x"></i>
       <p>
-        <%= sanitize a.body %>
+        <%= sanitize a.schedule %>
       </p>
+  </div>
+  <legend></legend>
+  <div class="col-md-8 ml-auto mr-auto">
+    <div class="tim-typo">
+        <h5><b><%= @contacttitle %></b></h5>
+    </div>
+    <blockquote>
+    <div class="tim-typo">
+        <h6><span class="tim-note text-primary"><%= @contactperson %></span>&nbsp;&nbsp;&nbsp;   <%= a.name %></h6> 
+        <h6><span class="tim-note text-primary"><%= @contactnumber %></span>&nbsp;&nbsp; <%= a.phone %></h6>   
+        <h6><span class="tim-note text-primary"><%= @emailaddress %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <%= a.email %></h6> 
+        <h6><span class="tim-note text-primary"><%= @churchaddress %></span>&nbsp;&nbsp;&nbsp;   <%= a.address %></h6> 
+    </div>
+    </blockquote>
   </div>
   <% end %>
   <br />
+</div>
+<div class="container center">
   <div class="tim-row">
     <%= render 'email/contact'%>
   </div>

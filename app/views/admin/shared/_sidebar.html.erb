@@ -38,12 +38,12 @@
                 <p>Faith Page</p>
             <% end %>
           </li>
-          <li>
+          <%# <li>
             <a href="./user.html">
               <i class="fas fa-map-marked-alt"></i>
               <p>Visit Us</p>
             </a>
-          </li>
+          </li> %>
           <li class="<%= 'active' if params[:controller] == 'admin/abouts' %>">
             <%= link_to admin_abouts_path, class: "nav-link" do %>
                 <i class="fas fa-book"></i>

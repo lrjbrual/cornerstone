@@ -1,7 +1,7 @@
 <div class="md-center">
     <div class="card card-user">
       <div class="card-header">
-        <h5 class="card-title"><b><%= action_name.capitalize %> About</b></h5>
+        <h5 class="card-title"><b><%= action_name.capitalize %> About us</b></h5>
       </div>
       <%= form_for [:admin, @about] do |about| %>
       <% if @about.errors.any? %>
@@ -17,68 +17,28 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 pr-1">
               <div class="form-group">
-                <%= about.label :page_title %>
-                <%= about.text_field :page_title, class: "form-control", placeholder: "Title"%>
+                <%= about.label :about_us, ('About Us Description') %>
+                <%= about.trix_editor :about_us, required: true, autofocus: true, data: { coffee: :delicious }  %>
               </div>
               <div class="form-group">
-                <%= about.label :page_notes %>
-                <%= about.text_area :page_notes, class: "form-control", placeholder: "Title"%>
+                <%= about.label :schedule, ('Weekly Schedule and or Announcement') %>
+                <%= about.trix_editor :schedule, required: true, autofocus: true, data: { coffee: :delicious }  %>
               </div>
               <div class="form-group">
-                <%= about.label :scriptures_title %>
-                <%= about.text_area :scriptures_title, class: "form-control", placeholder: "Body texts"%>
+                <%= about.label :name, ('Contact Person') %>
+                <%= about.text_field :name, class: "form-control" %>
               </div>
               <div class="form-group">
-                <%= about.label :scriptures_body %>
-                <%= about.text_area :scriptures_body, class: "form-control", placeholder: "Body texts"%>
+                <%= about.label :phone, ('Contact Phone Number') %>
+                <%= about.number_field :phone, class: "form-control" %>
               </div>
               <div class="form-group">
-                <%= about.label :godhead_title %>
-                <%= about.text_field :godhead_title, class: "form-control", placeholder: "Body texts"%>
+                <%= about.label :email, ('Contact Email Address') %>
+                <%= about.text_field :email, class: "form-control" %>
               </div>
               <div class="form-group">
-                <%= about.label :godhead_body %>
-                <%= about.text_area :godhead_body, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :diety_title %>
-                <%= about.text_field :diety_title, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :diety_body %>
-                <%= about.text_area :diety_body, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :salvation_title %>
-                <%= about.text_field :salvation_title, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :salvation_body %>
-                <%= about.text_area :salvation_body, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :church_title %>
-                <%= about.text_field :church_title, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :church_body %>
-                <%= about.text_area :church_body, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :last_title %>
-                <%= about.text_field :last_title, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :last_body %>
-                <%= about.text_area :last_body, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :title %>
-                <%= about.text_field :title, class: "form-control", placeholder: "Body texts"%>
-              </div>
-              <div class="form-group">
-                <%= about.label :body %>
-                <%= about.text_area :body, class: "form-control", placeholder: "Body texts"%>
+                <%= about.label :address, ('Church Address') %>
+                <%= about.text_field :address, class: "form-control" %>
               </div>
                 <%= link_to "Cancel", admin_abouts_path, class: "btn btn-secondary btn-wd" %>
                 <%= about.submit frm_action, class: "btn btn-primary btn-wd"%>

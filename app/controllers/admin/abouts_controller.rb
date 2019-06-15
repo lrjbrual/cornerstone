@@ -62,13 +62,7 @@ module Admin
 
     def about_params
       params.require(:about).permit(
-        :title, :body, :scriptures_title, :scriptures_body,
-        :godhead_title, :godhead_body, 
-        :diety_title, :diety_body,
-        :salvation_title, :salvation_body,
-        :church_title, :church_body,
-        :last_title, :last_body,
-        :page_title, :page_notes
+        :about_us, :schedule, :name, :phone, :email, :address
         )
     end
   end

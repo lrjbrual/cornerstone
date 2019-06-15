@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2019_06_15_090031) do
   enable_extension "plpgsql"
 
   create_table "abouts", force: :cascade do |t|
+    t.string "about_us"
+    t.string "schedule"
     t.string "name"
-    t.string "phone"
+    t.integer "phone"
     t.string "email"
     t.string "address"
     t.datetime "created_at", null: false
