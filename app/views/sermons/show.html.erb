@@ -3,7 +3,7 @@
     <div class="col-md-12 ml-auto mr-auto">
       <div class="text-center">
         <a href="javascrip: void(0);">
-          <h3 class="title"><%= @sermon.title%></h3>
+          <h3 class="title"><%= @sermon.title.upcase%></h3>
         </a>
         <h5 class="category">Posted:  <%= time_ago_in_words(@sermon.created_at) %> Ago</h5>
       </div>

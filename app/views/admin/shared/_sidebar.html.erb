@@ -10,23 +10,20 @@
         </a>
         <a href="#" class="simple-text logo-normal">
           Admin
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
+          <%# <li>
             <a href="">
               <i class="fas fa-chart-line"></i>
               <p>Dashboard</p>
             </a>
-          </li>
+          </li> %>
           <li class="<%= 'active' if params[:controller] == 'admin/sermons' %>">
             <%= link_to admin_sermons_path, class: "nav-link" do %>
               <i class="fas fa-user-tie"></i>
-              <p>Sermons</p>
+              <p>Teaching</p>
             <% end %>
           </li>
           <li class="<%= 'active' if params[:controller] == 'admin/categories' %>">
@@ -35,11 +32,11 @@
                 <p>Categories</p>
             <% end %>
           </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="fas fa-bible"></i>
-              <p>Belief</p>
-            </a>
+          <li class="<%= 'active' if params[:controller] == 'admin/beliefs' %>">
+            <%= link_to admin_beliefs_path, class: "nav-link" do %>
+                <i class="fas fa-bible"></i>
+                <p>Faith Page</p>
+            <% end %>
           </li>
           <li>
             <a href="./user.html">
@@ -58,6 +55,11 @@
             <%= link_to admin_users_path, class: "nav-link" do %>
               <i class="fas fa-users"></i>
               <p>User</p>
+            <% end %>
+          </li>
+          <li>
+              <%= link_to root_path, target: "_blank", class: "navbar-brand" do %>
+              <i class="fas fa-chevron-left"></i> Back to Website
             <% end %>
           </li>
         </ul>

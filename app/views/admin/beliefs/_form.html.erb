@@ -1,0 +1,91 @@
+<div class="md-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title"><b><%= action_name.capitalize %> Belief Page</b></h5>
+      </div>
+      <%= form_for [:admin, @belief] do |belief| %>
+      <% if @belief.errors.any? %>
+        <% @belief.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+            <button type="button" aria-hidden="true" class="close">×</button>
+            <span><b> Danger - </b> <%= msg %></span>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 pr-1">
+              <div class="form-group">
+                <%= belief.label :page_title %>
+                <%= belief.text_field :page_title, class: "form-control", placeholder: "Title"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :page_notes %>
+                <%= belief.text_area :page_notes, class: "form-control", placeholder: "Title"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :scriptures_title %>
+                <%= belief.text_field :scriptures_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :scriptures_body %>
+                <%= belief.text_area :scriptures_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :godhead_title %>
+                <%= belief.text_field :godhead_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :godhead_body %>
+                <%= belief.text_area :godhead_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :diety_title %>
+                <%= belief.text_field :diety_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :diety_body %>
+                <%= belief.text_area :diety_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :salvation_title %>
+                <%= belief.text_field :salvation_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :salvation_body %>
+                <%= belief.text_area :salvation_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :church_title %>
+                <%= belief.text_field :church_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :church_body %>
+                <%= belief.text_area :church_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :last_title %>
+                <%= belief.text_field :last_title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :last_body %>
+                <%= belief.text_area :last_body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :title %>
+                <%= belief.text_field :title, class: "form-control", placeholder: "Body texts"%>
+              </div>
+              <div class="form-group">
+                <%= belief.label :body %>
+                <%= belief.text_area :body, class: "form-control", placeholder: "Body texts"%>
+              </div>
+                <%= link_to "Cancel", admin_beliefs_path, class: "btn btn-secondary btn-wd" %>
+                <%= belief.submit belief_action, class: "btn btn-primary btn-wd"%>
+            </div>
+          </div>
+        </form>
+      </div>
+        <% end %>
+    </div>
+  </div>

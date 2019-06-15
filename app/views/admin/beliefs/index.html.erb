@@ -1,0 +1,5 @@
+<% if @belief == '' %>
+  <%= link_to "New", new_admin_belief_path, class: "btn btn-sm btn-primary" %>
+<% else %>
+  <%= render 'form' %>
+<% end %>

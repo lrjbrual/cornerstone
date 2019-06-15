@@ -27,7 +27,7 @@ class FaithController < ApplicationController
     be bound for 1000 years and Christ will physical reign on earth. After this time SAtan will be loosed a short time and Christ will judge all sin and wrong.
     At this time Christ will judge all sinners, casting them into the lake of fire where Satan will be cast, and the Lord will bring about a new Heaven and new earth. 
     (I Thessalonians 1:10, 4:15-18, Matthew 24:15-17, Daniel 9:25-27, Revelation 20:1-3, Revelation 20:10-15,21:1)"
-
+    @beliefs = Belief.all
   end
 
 end

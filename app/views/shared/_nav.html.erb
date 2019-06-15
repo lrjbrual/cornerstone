@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
         </button>
           <%= link_to root_path, class: "navbar-brand" do %>
-            <i class="fa fa-book" aria-hidden="true"></i> cbc.nl  
+            <i class="fas fa-leaf"></i> cbc.nl  
           <% end %>
       </div>
   
@@ -17,16 +17,13 @@
       <div class="collapse navbar-collapse" id="navigation-example-2">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to "Home", root_path, class: 'btn btn-simple' %>
-          </li>
-          <li>
             <%= link_to "What We Believe", faith_index_path, class: 'btn btn-simple' %>
           </li>
           <li>
              <a href="#" class="btn btn-simple">Bible</a>
           </li>
           <li>
-            <%= link_to "Sermons", sermons_path, class: "btn btn-simple"%>
+            <%= link_to "Teaching", sermons_path, class: "btn btn-simple"%>
           </li>
           <li>
             <%= link_to "About Us", about_index_path, class: 'btn btn-simple' %>
@@ -35,7 +32,7 @@
             <%= link_to "Visit Us", email_index_path, class: 'btn btn-primary btn-fill' %>
           </li>
           <li>
-              <a href="#" target="_blank" class="btn btn-simple"><i class="fa fa-facebook"></i></a>
+              <a href="#" target="_blank" class="btn btn-simple"><i class="fab fa-facebook"></i></a>
           </li>
           </ul>
       </div><!-- /.navbar-collapse -->
