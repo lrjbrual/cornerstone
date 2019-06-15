@@ -2,52 +2,54 @@
   <div class="tim-row center">
       <h1><%= @title %></h1>
   </div>
-  <div class="tim-row">
+  <% @abouts.each do |f| %>
+    <div class="tim-row">
+      <br />
+      <h2>1. <%= f.scriptures_title %></h2>
+        <legend></legend>
+          <p>
+            <%= sanitize f.scriptures_body %>
+          </p>
+    </div>
+    <div class="tim-row">
     <br />
-    <h2><%= @scriptures %></h2>
+    <h2>2. <%= f.godhead_title %></h2>
       <legend></legend>
         <p>
-          <%= @aboutScriptures %>
+          <%= sanitize f.godhead_body %>
         </p>
-  </div>
-  <div class="tim-row">
-  <br />
-  <h2><%= @head %></h2>
-    <legend></legend>
-      <p>
-        <%= @godHead %>
-      </p>
-  </div>
-  <div class="tim-row">
-  <br />
-  <h2><%= @diety %></h2>
-    <legend></legend>
-      <p>
-        <%= @dietyOfChrist %>
-      </p>
-  </div>
-  <div class="tim-row">
-  <br />
-  <h2><%= @salvation %></h2>
-    <legend></legend>
-      <p>
-        <%= @aboutSalvation %>
-      </p>
-  </div>
-  <div class="tim-row">
-  <br />
-  <h2><%= @church %></h2>
-    <legend></legend>
-      <p>
-        <%= @aboutChurch %>
-      </p>
-  </div>
-  <div class="tim-row">
-  <br />
-  <h2><%= @last %></h2>
-    <legend></legend>
-      <p>
-        <%= @lastThing %>
-      </p>
-  </div>
+    </div>
+    <div class="tim-row">
+    <br />
+    <h2>3. <%= f.diety_title %></h2>
+      <legend></legend>
+        <p>
+          <%= sanitize f.diety_body %>
+        </p>
+    </div>
+    <div class="tim-row">
+    <br />
+    <h2>4. <%= f.salvation_title %></h2>
+      <legend></legend>
+        <p>
+          <%= sanitize f.salvation_body %>
+        </p>
+    </div>
+    <div class="tim-row">
+    <br />
+    <h2>5. <%= f.church_title %></h2>
+      <legend></legend>
+        <p>
+          <%= sanitize f.church_body %>
+        </p>
+    </div>
+    <div class="tim-row">
+    <br />
+    <h2>6. <%= f.last_title %></h2>
+      <legend></legend>
+        <p>
+          <%= sanitize f.last_body %>
+        </p>
+    </div>
+  <% end %>
 </div>
