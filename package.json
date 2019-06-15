@@ -2,9 +2,11 @@
   "name": "cornerstone",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "^4.0.2",
+    "core-js": "3"
   },
+  "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": ">=3.1.11"
+    "webpack-dev-server": "^3.4.1"
   }
 }
