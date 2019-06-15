@@ -8,11 +8,9 @@
 <div class="landing-header backgroundImage" >
     <div class="container">
         <div class="motto">
-        <% @abouts.each do |f| %>
-            <h1 class="title-uppercase marginTitle"><%= f.page_title %></h1>
-            <h3><%= f.page_notes %></h3>
+            <h1 class="title-uppercase marginTitle"><%= @titleCaption %></h1>
+            <h3><%= @verse %></h3>
             <br />
-        <% end %>
             <%= link_to sermons_path, class: "btn btn-warning" do %>
                 <i class="fa fa-play"></i>Latest sermons
             <% end %>
@@ -49,6 +47,6 @@
             </div>
         </div>
     </div>
-    <%= render 'email/form'%>
+    <%= render 'email/contact'%>
 </div>     
     
