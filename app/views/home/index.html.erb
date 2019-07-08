@@ -39,9 +39,9 @@
                             <%= feed.title %>
                         </h4>
                         <p>
-                            <%= sanitize feed.body.last(70) %>...
+                            <%= sanitize feed.body.first(70) %>...
                         </p>
-                            <%= link_to sermons_path, class:"btn btn-danger btn-simple" do %>
+                            <%= link_to sermon_path(feed), class:"btn btn-danger btn-simple" do %>
                                 See more..<i class="fa fa-chevron-right"></i>
                             <% end %>
                     </div>
