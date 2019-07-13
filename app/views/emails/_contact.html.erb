@@ -1,0 +1,43 @@
+<div class="section landing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12">
+                <h2 class="text-center">Contact Us</h2>
+            <%= render 'shared/alert' %> 
+            <%= form_tag "/emails/send_email_us" do %>
+                <form class="contact-form">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Name</label>
+                            <input name="name" class="form-control" placeholder="Your name" type="text" required>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>Email</label>
+                            <input name="email" class="form-control" placeholder="youremail@example.com" type="email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 paddingTop5px">
+                            <label>Phone Number</label>
+                            <input name="phone" class="form-control" placeholder="+3161888.." type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 paddingTop5px">
+                            <label>Message</label>
+                            <textarea name="message" class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4 col-sm-12">
+                            <%= submit_tag 'Send Message', class: 'btn btn-danger btn-block btn-lg btn-fill' %>
+                        </div>
+                    </div>
+                </form>
+            <% end %>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,7 +1,18 @@
+<hr >
 <footer class="footer-demo">
-    <div class="container">
-        <div class="copyright pull-right">
-            © <%= Date.today.year %> Cornerstone Baptist Church Netherlands
-        </div>
+    <div class="container paddingTopButtom">
+        <div class="row">
+            <div class="copyright col-md-6 col-sm-12">
+                © <%= Date.today.year %> Cornerstone Baptist Church Netherlands
+            </div>
+            <div class="col col-md-6 col-sm-12 tim-row">
+            <% @abouts.each do |f| %>
+                <div class="copyright pull-right margin22pxtopnegative">
+                    <h6><%= f.email.downcase %>&nbsp;&nbsp;|&nbsp; Call <%= f.phone %></h6>
+                    <h6><%= f.address %></h6>
+                </div>
+            <% end %>
+            </div>
+        <div>
     </div>
 </footer>

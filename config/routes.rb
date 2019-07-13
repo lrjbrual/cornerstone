@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   
   resources :faith, only: [:index, :scriptures]
   resources :about, :bibles, :sermons, only: [:index, :show]
-  resources :email, only: [:index]
+
+  resources :emails, only: [:index]
 
   namespace :admin do
     resources :categories, :sermons, :abouts, :beliefs, :users
   end
 
-  get 'email/index'
+  get 'emails/index'
+  post 'emails/send_email_us'
 
 end

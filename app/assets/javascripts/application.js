@@ -7,14 +7,5 @@
 //= require ct-paper-checkbox
 //= require ct-paper-radio
 //= require ct-paper
-//=# require core/popper.min
-//=# require plugins/boostrap-notify
-//=# require plugins/chartjs.min
-//=# require plugins/perfect-scrollbar.jquery.min
-//=# require plugins/paper-dashboard
-//=# require plugins/paper-dashboard.js
-//=# require plugins/paper-dashboard.min
-//=# require jquery-1.10.2
-//=# require jquery-ui-1.10.4.custom.min
 //= require turbolinks
 //= require trix
