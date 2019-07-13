@@ -1,5 +1,5 @@
 class EmailMailer < ApplicationMailer
-  default from: 'lrjbrual@gmail.com'
+  default from: 'cornerstonebaptistnl@gmail.com'
 
   def send_email_us
     @name = params[:name]

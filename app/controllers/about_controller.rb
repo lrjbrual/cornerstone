@@ -7,6 +7,5 @@ class AboutController < ApplicationController
     @emailaddress = 'Email Address: '
     @churchaddress = 'Our Church Address: '
     @abouts = About.all
-    # @about = About.find(params[:id])
   end
 end
