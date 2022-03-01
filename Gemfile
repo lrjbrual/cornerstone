@@ -17,7 +17,7 @@ gem 'google-webfonts'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'trix-rails', require: 'trix'
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.12"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
